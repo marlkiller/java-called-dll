@@ -18,11 +18,11 @@ public class DllCalledMyDLLDemo2 {
 
     public interface MyDll extends StdCallLibrary {
         MyDll instance = (MyDll) Native.load("MyDll-Project", MyDll.class, W32APIOptions.UNICODE_OPTIONS);
-        int echoAge();
+        int echoAge(int age );
 
     }
     public static void main(String[] args) {
-        int age = MyDll.instance.echoAge();
+        int age = MyDll.instance.echoAge(21);
         System.out.println(age);
     }
 }
